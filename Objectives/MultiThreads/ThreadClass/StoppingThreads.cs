@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace ImplementingThreads_1_1.ThreadClass
+namespace MultiThreads.ThreadClass
 {
     //To stop a thread, you can use the Thread.Abort method. 
     //However, because this method is executed by another thread, it can happen at any time. 

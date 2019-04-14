@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace ImplementingThreads_1_1.ThreadClass
+namespace MultiThreads.ThreadClass
 {
     //The thread pool automatically manages the amount of threads it needs to keep around.
     //When it is first created, it starts out empty.

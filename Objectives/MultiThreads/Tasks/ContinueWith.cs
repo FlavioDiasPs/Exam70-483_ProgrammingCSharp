@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ImplementingThreads_1_1.Tasks
+namespace MultiThreads.Tasks
 {
     //There is no built-in way to know when the operation has finished and what the return value is.    
     //This is why the.NET Framework introduces the concept of a Task, which is an object that represents some work that should be done.

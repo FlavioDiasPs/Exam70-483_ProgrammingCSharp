@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ImplementingThreads_1_1.Tasks
+namespace MultiThreads.Tasks
 {
     public static class UsingParallel
     {

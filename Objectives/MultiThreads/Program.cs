@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MultiThreads.Locks;
 
-namespace ImplementingThreads_1_1
+namespace MultiThreads
 {
     public class Program
     {       
@@ -22,15 +23,22 @@ namespace ImplementingThreads_1_1
             //Tasks.ParentChildTasks.RunTasksWithParent_Default_DenyChildAttach();
             //Tasks.ParentChildTasks.RunTasksWithParent_Simplified();
             //Tasks.UsingParallel.Measure_For_ForEach_Performance();
-            //Task.Run(() => { Tasks.UsingAyncAwait.RunAsyncOperation().GetAwaiter().GetResult(); });
+            //Task.Run(() => { Tasks.UsingAyncAwait.RunAsyncOperation().GetAwaiter().GetResult(); });            
+            #endregion
 
-            
+            #region Code related to Locks
+            // UsingLock.NoLockExample();
+            // UsingLock.LockExample();
+            // UsingLock.DeadLockExample();
+
+            //UsingVolatile.VolatileExample();
+            UsingInterlock.InterlockExample();
+
             #endregion
 
 
-
             Console.WriteLine("GotThere!");
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }

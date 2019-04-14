@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace ImplementingThreads_1_1.ThreadClass
+namespace MultiThreads.ThreadClass
 {
     public class AttributeThreadStatic
     {

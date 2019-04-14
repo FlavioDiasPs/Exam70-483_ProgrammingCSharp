@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace ImplementingThreads_1_1.Tasks
+namespace MultiThreads.Tasks
 {
     public static class UsingAyncAwait
     {

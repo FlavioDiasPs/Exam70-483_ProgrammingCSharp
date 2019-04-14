@@ -32,7 +32,7 @@ namespace MultiThreads
             // UsingLock.DeadLockExample();
 
             //UsingVolatile.VolatileExample();
-            UsingInterlock.InterlockExample();
+            // UsingInterlock.InterlockExample();
 
             #endregion
 

@@ -12,7 +12,7 @@ namespace InterestingToKnow
         public Card this[int index]
         {
             get { return Cards.ElementAt(index); }
-            set { Cards[index] = value; }
+            set { Cards[index] = value; } 
         }
     }
 

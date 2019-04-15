@@ -45,5 +45,22 @@ namespace Events
             del = MethodListContravariance;
             del(new List<string>());
         }
+
+        private static void OnlyAuthorizedCanExecute(int a, int b) { Console.WriteLine($"Authorized, Received: {a}, {b}"); }
+        private delegate void returnDelegate(int a, int b);
+        public static Delegate GiveAccess(string name)
+        {
+            if (name == "flavio")
+            {
+                returnDelegate del = OnlyAuthorizedCanExecute;                                
+                return del;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
     }
 }

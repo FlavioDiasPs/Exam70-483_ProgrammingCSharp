@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Events
+namespace EventsDelegateLambda
 {
     // A delegate is a type that defines a method signature
     public static class UsingDelegates
@@ -46,19 +46,19 @@ namespace Events
             del(new List<string>());
         }
 
+        private delegate void AuthDel(int a, int b);
         private static void OnlyAuthorizedCanExecute(int a, int b) { Console.WriteLine($"Authorized, Received: {a}, {b}"); }
         public static Delegate GiveAccess(string name)
         {
             if (name == "flavio")
             {
-                return OnlyAuthorizedCanExecute;                                            
+                AuthDel del = OnlyAuthorizedCanExecute;
+                return del;
             }
             else
             {
                 return null;
             }
         }
-
-
     }
 }

@@ -48,43 +48,6 @@ namespace InterestingToKnow
             return GetEnumerator();
         }
     }
-    class RandomObject : IDisposable
-    {
-        public RandomObject()
-        {
-            
-        }
-        public RandomObject(int a)
-        {
-            MyNumber = a;
-        }
-        public int MyNumber { get; set; }
-
-        private Object someRandomObject;
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        ~RandomObject()
-        {
-            Dispose(false);
-        }
-        protected virtual void Dispose(bool disposing)
-    {
-            if(disposing)
-            {
-                //release managed resources
-            }
-            //release unmanaged resources
-
-            MyNumber = default(int);
-            someRandomObject = default(Object);
-
-            Console.WriteLine("Disposed");
-        }
-    }
 
     public class MyIComparable
     {
@@ -145,8 +108,45 @@ namespace InterestingToKnow
     {
         public static void RunDisposable()
         {
-            var rnd = new RandomObject();
-            rnd.Dispose();
+            var uw = new UnmangedWrapper();
+            uw.Dispose();
+        }
+    }
+
+    class UnmangedWrapper : IDisposable
+    {
+        public FileStream Stream { get; private set; }
+        public UnmangedWrapper()
+        {
+            this.Stream = File.Open("teste.txt", FileMode.Create);
+        }
+        ~UnmangedWrapper()
+        {
+            //False because stream already have a finnalizer
+            //So we dont need to call it twice, let the garbage collector deal with it
+            Dispose(false);
+        }
+        public void Close()
+        {
+            Dispose();
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+            //We want to make sure that the garbage collector 
+            //wil remove this class reference from his of objects to be freed
+            //because we are mannually removing them from memory
+            System.GC.SuppressFinalize(this);
+        }
+        public void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (Stream != null)
+                {
+                    Stream.Close();
+                }
+            }
         }
     }
 }

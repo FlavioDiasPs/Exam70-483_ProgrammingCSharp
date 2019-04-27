@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 // when the publisher of the event raises a new event. This is used to establish loose coupling
 // between components in an application.
 
-namespace Events
+namespace EventsDelegateLambda
 {
     public class MyArgs : EventArgs
     {

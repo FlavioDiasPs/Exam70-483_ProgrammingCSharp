@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Events
+namespace EventsDelegateLambda
 {
     public static class Program
     {
@@ -12,18 +12,22 @@ namespace Events
             // UsingDelegates.MulticastDelegate();
             // UsingDelegates.CovarianceDelegate();
             // UsingDelegates.ContravarianceDelegate();
-            var del = UsingDelegates.GiveAccess("flavio");
-            del.DynamicInvoke(2, 4);
+            //var del = UsingDelegates.GiveAccess("flavio").DynamicInvoke(2, 4) ;
+
             #endregion
 
-            #region Lambda + Events
+            #region Lambda + Events + ExpressionTrees
 
             //UsingLambda.LambdaToDelegate();
+            // UsingLambda.LambdaWithAction();
+            // UsingLambda.LambdaWithFunc();
+
             //UsingEvents.RunRaise();
 
+            UsingExpressionTree.RunExpressionTree();
             #endregion
 
-            Console.WriteLine("Events Got There!");
+            Console.WriteLine("Got There!");
             Console.Read();
 
         }

@@ -1,6 +1,6 @@
 using System;
 
-namespace Attributes
+namespace AttributesAndReflection
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
     public class MyCustomAttribute : Attribute

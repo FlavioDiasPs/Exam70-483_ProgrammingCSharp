@@ -5,6 +5,7 @@ namespace EventsDelegateLambda
 {
     public static class UsingExpressionTree
     {
+        //ExpressionTree describes code
         public static void RunExpressionTree()
         {
             BlockExpression blockExpr = Expression.Block
